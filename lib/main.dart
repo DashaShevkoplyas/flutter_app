@@ -23,16 +23,19 @@ class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
   final String title;
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
   Color color = Colors.white;
-   _generateColor(){
-     Color tmp = Color((new Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0);
-     setState(() {
-        color = tmp;
+
+  _generateColor() {
+    Color tmp =
+        Color((new Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0);
+    setState(() {
+      color = tmp;
     });
   }
 
@@ -44,23 +47,37 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Hello there :)',
+        child: new GestureDetector(
+          onTap: () => _generateColor(),
+          child: new Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            child: Text(
+              'Hello',
+              textAlign: TextAlign.center,
             ),
-            RaisedButton(
-              onPressed: () => _generateColor(),
-              child: Text('Press'),
-              textColor: Colors.white,
-              color: Colors.cyan,
-              padding: EdgeInsets.fromLTRB(10,10,10,10),
-            )
-          ],
+          ),
         ),
+
+//
       ),
 // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
+
+//child: Column(
+//          mainAxisAlignment: MainAxisAlignment.center,
+//          children: <Widget>[
+//            Text(
+//              'Hello there :)',
+//            ),
+//            RaisedButton(
+//              onPressed: () => _generateColor(),
+//              child: Text('Press'),
+//              textColor: Colors.white,
+//              color: Colors.cyan,
+//              padding: EdgeInsets.fromLTRB(10,10,10,10),
+//            )
+//          ],
+//        ),
