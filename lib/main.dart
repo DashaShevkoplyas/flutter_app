@@ -67,18 +67,19 @@ class _MyHomePageState extends State<MyHomePage> {
                           width: 0.1,
                         ),
                       ),
-                      child: Center(
-                        child: Text(
-                          'hello there :)',
-                          style: TextStyle(
-                              fontSize: 40,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Calibri Light',
-                              letterSpacing: 1.0,
-                              color: Colors.black87),
+                        child: Center(
+                          child: Text(
+                            'hello there',
+                            style: TextStyle(
+                                fontSize: 40,
+                                fontWeight: FontWeight.bold,
+                                letterSpacing: 1.5,
+                                color: Colors.black54,
+                                backgroundColor: Colors.white70),
+                          ),
                         ),
-                      ),
                     ),
+
                   ),
                 ),
               ],
