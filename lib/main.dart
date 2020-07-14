@@ -32,7 +32,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Color color = Colors.white;
 
   _generateColor() {
-    Color tmp = Color((new Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0);
+    Color tmp =
+        Color((new Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0);
     setState(() {
       color = tmp;
     });
@@ -57,22 +58,27 @@ class _MyHomePageState extends State<MyHomePage> {
                       _generateColor();
                       print("Tapped");
                     },
-                      child: new Container(
-                        width:MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height*0.875,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: color,
-                            width: 0.1,
-                          ),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'hello there :)',
-                            style: TextStyle(fontSize: 40),
-                          ),
+                    child: new Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height * 0.875,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: color,
+                          width: 0.1,
                         ),
                       ),
+                      child: Center(
+                        child: Text(
+                          'hello there :)',
+                          style: TextStyle(
+                              fontSize: 40,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Calibri Light',
+                              letterSpacing: 1.0,
+                              color: Colors.black87),
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ],
@@ -81,4 +87,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
