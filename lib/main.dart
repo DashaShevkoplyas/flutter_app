@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Center(
             child: Column(
               children: <Widget>[
-                new Container(
+                new InkWell(
                   child: new GestureDetector(
                     onTap: () {
                       _generateColor();
@@ -67,20 +67,20 @@ class _MyHomePageState extends State<MyHomePage> {
                           width: 0.1,
                         ),
                       ),
-                        child: Center(
-                          child: Text(
-                            'hello there',
-                            style: TextStyle(
-                                fontSize: 40,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 1.5,
-                                color: Colors.black54,
-                                backgroundColor: Colors.white70),
-                          ),
+                      child: Center(
+                        child: Text(
+                          'hello there',
+                          style: TextStyle(
+                              fontSize: 40,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1.5,
+                              color: Colors.black54,
+                              backgroundColor: Colors.white70),
                         ),
+                      ),
                     ),
-
                   ),
+                  onTap: () {},
                 ),
               ],
             ),
