@@ -43,41 +43,45 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: color,
+      resizeToAvoidBottomPadding: false,
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: new GestureDetector(
-          onTap: () => _generateColor(),
-          child: new Container(
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-            child: Text(
-              'Hello',
-              textAlign: TextAlign.center,
+      body: SingleChildScrollView(
+          padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 3.0),
+          child: Center(
+            child: Column(
+              children: <Widget>[
+                new Container(
+                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width,
+                  child: new GestureDetector(
+                    onTap: () => _generateColor(),
+                      child: Text(
+                        "hello there :)",
+                        style: TextStyle(fontSize: 30),
+                        textAlign: TextAlign.center,
+                      ),
+                  ),
+                ),
+              ],
             ),
-          ),
-        ),
-
-//
-      ),
-// This trailing comma makes auto-formatting nicer for build methods.
+          )),
     );
   }
 }
 
-//child: Column(
-//          mainAxisAlignment: MainAxisAlignment.center,
-//          children: <Widget>[
-//            Text(
-//              'Hello there :)',
+//        child: new GestureDetector(
+//          onTap: () => _generateColor(),
+//          child: new Container(
+//            height: MediaQuery.of(context).size.height,
+//            width: MediaQuery.of(context).size.width,
+//            child: new Container(
+//              child: new Text(
+//                'hello there :)',
+//                textAlign: TextAlign.center,
+//                style:TextStyle(fontSize: 30),
+//              ),
 //            ),
-//            RaisedButton(
-//              onPressed: () => _generateColor(),
-//              child: Text('Press'),
-//              textColor: Colors.white,
-//              color: Colors.cyan,
-//              padding: EdgeInsets.fromLTRB(10,10,10,10),
-//            )
-//          ],
+//          ),
 //        ),
